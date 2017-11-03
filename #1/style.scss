@@ -1,0 +1,44 @@
+body{
+	background: url(img/bgi.jpg);
+	background-size: cover;
+}
+.content{
+	display: flex;
+	align-items: center;
+	height: 100vh;
+}
+.drum{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	//padding: 0px 10%;
+}
+.drum__key{
+	color: #fff;
+	font-size: 24px;
+    font-family: cursive;
+    background-color: rgba(18,18,18,.8);
+    padding: 10px;
+    height: 56px;
+    width: 58px;
+    border: 3px solid black;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 0 5px #000;
+    transition: all 0.07s;
+}
+.drum__letter{
+	display: inline-block;
+	width: 100%;
+}
+.drum__key--play{
+	transform:scale(2.0);
+	border-color: #ffc600;
+	box-shadow: 0 0 10px #ffc600;
+}
+.drum__sound{
+	color: lightgrey;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

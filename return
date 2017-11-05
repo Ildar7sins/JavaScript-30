@@ -1,0 +1,194 @@
+[33mcommit a57597623b1ac881e85e8b55798b900445110db3[m
+Author: Ildar <Ildar7sins@gmail.com>
+Date:   Fri Nov 3 09:33:32 2017 +0500
+
+    First day
+
+[1mdiff --git a/#1/img/bgi.jpg b/#1/img/bgi.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2586622[m
+Binary files /dev/null and b/#1/img/bgi.jpg differ
+[1mdiff --git a/#1/index.html b/#1/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..abc722a[m
+[1m--- /dev/null[m
+[1m+++ b/#1/index.html[m
+[36m@@ -0,0 +1,61 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m	[32m<meta charset="UTF-8">[m
+[32m+[m	[32m<title>Драм машина</title>[m
+[32m+[m	[32m<link rel="stylesheet" type="text/css" href="style.css">[m
+[32m+[m	[32m<script src="script.js" type="text/javascript"></script>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m	[32m<div class="content">[m
+[32m+[m		[32m<div class="drum">[m
+[32m+[m			[32m<div data-key="65" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">A</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Boom</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="83" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">L</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Clap</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="68" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">S</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Hihat</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="70" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">D</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Kick</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="71" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">F</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Openhat</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="72" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">G</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Ride</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="74" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">H</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Snare</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="75" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">J</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Tink</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m			[32m<div data-key="76" class="drum__key">[m
+[32m+[m				[32m<kdb class="drum__letter">K</kdb>[m
+[32m+[m				[32m<span class="drum__sound">Tom</span>[m
+[32m+[m			[32m</div>[m
+[32m+[m		[32m</div>[m
+[32m+[m	[32m</div>[m
+[32m+[m
+[32m+[m	[32m<audio data-key="65" src="sounds/boom.wav"></audio>[m
+[32m+[m	[32m<audio data-key="83" src="sounds/clap.wav"></audio>[m
+[32m+[m	[32m<audio data-key="68" src="sounds/hihat.wav"></audio>[m
+[32m+[m	[32m<audio data-key="70" src="sounds/kick.wav"></audio>[m
+[32m+[m	[32m<audio data-key="71" src="sounds/openhat.wav"></audio>[m
+[32m+[m	[32m<audio data-key="72" src="sounds/ride.wav"></audio>[m
+[32m+[m	[32m<audio data-key="74" src="sounds/snare.wav"></audio>[m
+[32m+[m	[32m<audio data-key="75" src="sounds/tink.wav"></audio>[m
+[32m+[m	[32m<audio data-key="76" src="sounds/tom.wav"></audio>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/#1/script.js b/#1/script.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d144df6[m
+[1m--- /dev/null[m
+[1m+++ b/#1/script.js[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m
+[32m+[m[32mwindow.addEventListener('keydown', function(e) {[m
+[32m+[m			[32mconst audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);[m
+[32m+[m			[32mconst key = document.querySelector(`.drum__key[data-key="${e.keyCode}"]`);[m
+[32m+[m			[32mif (!audio) return;[m
+[32m+[m			[32maudio.currentTime = 0;[m
+[32m+[m			[32maudio.play();[m
+[32m+[m			[32mkey.classList.add('drum__key--play');[m
+[32m+[m[41m			[m
+[32m+[m			[32mconst fn = removeAnimate.bind(null, key)[m
+[32m+[m	[32m        key.removeEventListener('transitionend', fn, false)[m
+[32m+[m	[32m        key.addEventListener('transitionend', fn, false)[m
+[32m+[m		[32m});[m
+[32m+[m[32mfunction removeAnimate(key) {[m
+[32m+[m[32m        key.classList.remove('drum__key--play')[m
+[32m+[m[32m    }[m
+[1mdiff --git a/#1/sounds/boom.wav b/#1/sounds/boom.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8d6423b[m
+Binary files /dev/null and b/#1/sounds/boom.wav differ
+[1mdiff --git a/#1/sounds/clap.wav b/#1/sounds/clap.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ef952e5[m
+Binary files /dev/null and b/#1/sounds/clap.wav differ
+[1mdiff --git a/#1/sounds/hihat.wav b/#1/sounds/hihat.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..885cb19[m
+Binary files /dev/null and b/#1/sounds/hihat.wav differ
+[1mdiff --git a/#1/sounds/kick.wav b/#1/sounds/kick.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8fe46de[m
+Binary files /dev/null and b/#1/sounds/kick.wav differ
+[1mdiff --git a/#1/sounds/openhat.wav b/#1/sounds/openhat.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5063752[m
+Binary files /dev/null and b/#1/sounds/openhat.wav differ
+[1mdiff --git a/#1/sounds/ride.wav b/#1/sounds/ride.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e5829df[m
+Binary files /dev/null and b/#1/sounds/ride.wav differ
+[1mdiff --git a/#1/sounds/snare.wav b/#1/sounds/snare.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c4edfc7[m
+Binary files /dev/null and b/#1/sounds/snare.wav differ
+[1mdiff --git a/#1/sounds/tink.wav b/#1/sounds/tink.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f907ea2[m
+Binary files /dev/null and b/#1/sounds/tink.wav differ
+[1mdiff --git a/#1/sounds/tom.wav b/#1/sounds/tom.wav[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9e2cdf6[m
+Binary files /dev/null and b/#1/sounds/tom.wav differ
+[1mdiff --git a/#1/style.css b/#1/style.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bc6444c[m
+[1m--- /dev/null[m
+[1m+++ b/#1/style.css[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mbody{background:url(img/bgi.jpg);background-size:cover}.content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh}.drum{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%}.drum__key{color:#fff;font-size:24px;font-family:cursive;background-color:rgba(18,18,18,0.8);padding:10px;height:56px;width:58px;border:3px solid black;text-align:center;margin:10px;-webkit-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;-webkit-transition:all 0.07s;transition:all 0.07s}.drum__letter{display:inline-block;width:100%}.drum__key--play{-webkit-transform:scale(2);transform:scale(2);border-color:#ffc600;-webkit-box-shadow:0 0 10px #ffc600;box-shadow:0 0 10px #ffc600}.drum__sound{color:lightgrey;font-size:12px;text-transform:uppercase;letter-spacing:1px}[m
+[1mdiff --git a/#1/style.scss b/#1/style.scss[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2a654df[m
+[1m--- /dev/null[m
+[1m+++ b/#1/style.scss[m
+[36m@@ -0,0 +1,44 @@[m
+[32m+[m[32mbody{[m
+[32m+[m	[32mbackground: url(img/bgi.jpg);[m
+[32m+[m	[32mbackground-size: cover;[m
+[32m+[m[32m}[m
+[32m+[m[32m.content{[m
+[32m+[m	[32mdisplay: flex;[m
+[32m+[m	[32malign-items: center;[m
+[32m+[m	[32mheight: 100vh;[m
+[32m+[m[32m}[m
+[32m+[m[32m.drum{[m
+[32m+[m	[32mdisplay: flex;[m
+[32m+[m	[32mjustify-content: center;[m
+[32m+[m	[32mwidth: 100%;[m
+[32m+[m	[32m//padding: 0px 10%;[m
+[32m+[m[32m}[m
+[32m+[m[32m.drum__key{[m
+[32m+[m	[32mcolor: #fff;[m
+[32m+[m	[32mfont-size: 24px;[m
+[32m+[m[32m    font-family: cursive;[m
+[32m+[m[32m    background-color: rgba(18,18,18,.8);[m
+[32m+[m[32m    padding: 10px;[m
+[32m+[m[32m    height: 56px;[m
+[32m+[m[32m    width: 58px;[m
+[32m+[m[32m    border: 3px solid black;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    margin: 10px;[m
+[32m+[m[32m    box-shadow: 0 0 5px #000;[m
+[32m+[m[32m    transition: all 0.07s;[m
+[32m+[m[32m}[m
+[32m+[m[32m.drum__letter{[m
+[32m+[m	[32mdisplay: inline-block;[m
+[32m+[m	[32mwidth: 100%;[m
+[32m+[m[32m}[m
+[32m+[m[32m.drum__key--play{[m
+[32m+[m	[32mtransform:scale(2.0);[m
+[32m+[m	[32mborder-color: #ffc600;[m
+[32m+[m	[32mbox-shadow: 0 0 10px #ffc600;[m
+[32m+[m[32m}[m
+[32m+[m[32m.drum__sound{[m
+[32m+[m	[32mcolor: lightgrey;[m
+[32m+[m[32m    font-size: 12px;[m
+[32m+[m[32m    text-transform: uppercase;[m
+[32m+[m[32m    letter-spacing: 1px;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m

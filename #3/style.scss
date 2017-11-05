@@ -1,0 +1,51 @@
+:root{
+	--base : #ffc600;
+	--spacing: 25px;
+	--blur: 10px;
+}
+
+body{
+	height: 94vh;
+	background: -webkit-gradient(radial, left bottom, 0, left bottom, 723,color-stop(0, rgb(243, 21, 211)),color-stop(1, rgb(0, 152, 133)));
+}
+h2{
+	font-size: 32px;
+	text-align: center;
+	color: white;
+}
+.h2__span{
+	color: var(--base);
+}
+label{
+	color: white;
+	font-size: 20px;
+	font-weight: 100;
+}
+.h1{
+	font-size: 37px;
+}
+.controls{
+	text-align: center;
+}
+input[type=range]{
+	vertical-align: middle;
+    -webkit-appearance: none;
+    border-radius:2px;
+    height: 0px;
+    width: 150px;
+    outline : none;
+    border:1px solid #D4D4D4;
+}
+.image{
+	margin: 30px auto;
+	text-align: center;
+	max-width: 312px;
+	padding: var(--spacing);
+	background-color: var(--base);
+	img{
+		max-height: 350px;
+		filter: blur( var(--blur));
+	}
+}
+
+
